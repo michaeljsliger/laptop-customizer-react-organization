@@ -1,6 +1,7 @@
 import React from 'react';
 import Option from './Option';
 import slugify from 'slugify';
+import FEATURES from './featuresStore';
 
 
 
@@ -9,16 +10,17 @@ class Features extends React.Component {
     
 
     render() {
-        const features = Object.keys(this.props.features).map((feature, idx) => {
+        const features = Object.keys(FEATURES).map((feature, idx) => {
             // for each feature, 
             // map into options
             const featureHash = feature + '-' + idx;
-            const options = this.props.features[feature].map(item => {
-              const itemHash = slugify(JSON.stringify(item));
+            const options = FEATURES[feature].map(item => {
+            const itemHash = slugify(JSON.stringify(item));
               return (
                 <Option 
+                key={itemHash}
                 itemHash={itemHash}
-                feature={feature /* NOT this.props.features[feature]*/ } 
+                feature={feature /* NOT this.props.features[feature] */ } 
                 item={item}
                 name={slugify(feature)}
                 selected={this.props.selected[feature]}

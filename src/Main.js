@@ -12,7 +12,6 @@ class Main extends React.Component {
             <Header />
             <main>
             <Features 
-                features={this.props.features}
                 selected={this.props.selected}
                 updateFeature={this.props.updateFeature}
                 />

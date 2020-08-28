@@ -38,7 +38,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Main selected={this.state.selected} features={this.props.features} updateFeature={this.updateFeature}/>
+        <Main selected={this.state.selected} updateFeature={this.updateFeature}/>
       </div>
     );
   }

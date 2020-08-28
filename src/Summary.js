@@ -9,6 +9,7 @@ class Summary extends React.Component {
             const selectedOption = this.props.selected[feature];
             return (
                 <SummaryOption 
+                    key={featureHash}
                     featureHash={featureHash}
                     feature={feature}
                     selected={selectedOption} />
